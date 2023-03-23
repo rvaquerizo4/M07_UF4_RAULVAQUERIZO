@@ -1,0 +1,29 @@
+{% extends 'index.html' %}
+{% block content %}
+
+  <h1>Pagina alumnes</h1>
+  <h2>Dades Alumnes:</h2>
+    {% for k,v in  alumn.items %}
+    <h3>{{ k }}</h3>
+    <div>
+        <label>
+            Nom:
+        </label>
+            {{ v.name }}
+    </div>
+    <div>
+        <label>
+            Cognom:
+        </label>
+            {{ v.surname }}
+    </div>
+    <div>
+        <label>
+            Age:
+        </label>
+            {{ v.age }}
+    </div>
+    {% endfor %}
+
+  
+{% endblock %}
