@@ -2,12 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader, Context
 
-
-def index(request):
-    return render(request, 'index.html')
-
-def prof(request):
-    prof = {
+profesores = {
         "prof1": {
             "id": "1",
             "name":"Roger",
@@ -27,13 +22,7 @@ def prof(request):
             "age": "13"
         },
     }
-    context = {'prof': prof}
-
-    return render(request, 'prof.html', context)
-
-
-def alumn(request):
-    alumn = {
+alumnos = {
         "alumn1": {
             "id": "1",
             "name": "Enric",
@@ -71,5 +60,33 @@ def alumn(request):
             "age": "13"
         },
     }
+def index(request):
+    return render(request, 'index.html')
+
+def profs(request):
+    prof = profesores
+    context = {'prof': prof}
+    return render(request, 'profs.html', context)
+
+
+def alumns(request):
+    alumn = alumnos
     context = {'alumn': alumn}
     return render(request, 'alumns.html', context)
+
+def alumn(request, pk):
+    alumn_Obj = None
+    for i in alumnos.values():
+        if i['id'] == pk:
+            alumn_Obj = i
+            break
+    return render(request, 'alumn.html', {'alumn': alumn_Obj})
+
+
+def prof(request, pk):
+    prof_Obj = None
+    for i in profesores.values():
+        if i['id'] == pk:
+            prof_Obj = i
+            break
+    return render(request, 'prof.html', {'prof': prof_Obj})
