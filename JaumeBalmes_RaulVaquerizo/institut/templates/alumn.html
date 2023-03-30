@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+{% block content %}
+
+  <h1>Pagina alumnes</h1>
+  <h2>Dades Alumne:</h2>
+    <div>
+        <label>
+            Nom:
+        </label>
+            {{ alumn.name }}
+    </div>
+    <div>
+        <label>
+            Cognom:
+        </label>
+            {{ alumn.surname }}
+    </div>
+    <div>
+        <label>
+            Age:
+        </label>
+            {{ alumn.age }}
+    </div>
+    </br>
+    <a href="{% url 'alumns' %}">Go back</a>
+
+{% endblock %}

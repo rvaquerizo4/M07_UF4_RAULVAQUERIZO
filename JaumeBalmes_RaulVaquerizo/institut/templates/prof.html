@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% block content %}
+
+  <h1>Pagina profesor</h1>
+  <h2>Dades Profesor:</h2>
+
+    <div>
+        <label>
+            Nom:
+        </label>
+            {{ prof.name }}
+    </div>
+    <div>
+        <label>
+            Cognom:
+        </label>
+            {{ prof.surname }}
+    </div>
+    <div>
+        <label>
+            Age:
+        </label>
+            {{ prof.age }}
+    </div>
+
+    </br>
+    <a href="{% url 'profs' %}">Go back</a>
+{% endblock %}

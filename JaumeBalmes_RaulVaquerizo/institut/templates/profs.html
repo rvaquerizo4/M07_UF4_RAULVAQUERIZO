@@ -1,0 +1,27 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <h1>Pagina profesor</h1>
+  <h2>Dades Profesor:</h2>
+  {% for k, v in prof.items %}
+    <h3>{{ k }}</h3>
+    <div>
+      <label>
+        Nom:
+      </label>
+      <a href="{% url 'prof' v.id %}">{{ v.name }}</a>
+    </div>
+    <div>
+      <label>
+        Cognom:
+      </label>
+      {{ v.surname }}
+    </div>
+    <div>
+      <label>
+        Age:
+      </label>
+      {{ v.age }}
+    </div>
+  {% endfor %}
+{% endblock %}
