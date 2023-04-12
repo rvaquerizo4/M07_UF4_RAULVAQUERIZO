@@ -1,7 +1,9 @@
 .header{
-    background-color: cyan;
+    background-color: red;
     display: flex;
     justify-content: center;
 
-
+}
+#h1header{
+  margin: 12px
 }
