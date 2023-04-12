@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.template import loader, Context
+from django.template.context import RequestContext
 
 profesores = {
         "prof1": {
