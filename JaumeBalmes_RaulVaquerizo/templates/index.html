@@ -3,10 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Institut</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href=" {% static 'styles/form.css' %} ">
+    <link rel="stylesheet" type="text/css" href=" {% static 'styles/header.css' %} ">
+
 </head>
 <body>
     {% include "head/header.html" %}
     <h1>Primer Projecto - Institut</h1>
+    <a href="{% url 'form_alum' %}">Afegir alumnes</a>
+    <a href="{% url 'form_prof' %}">Afegir profesors</a>
     {% block content %}
 
     {% endblock %}
