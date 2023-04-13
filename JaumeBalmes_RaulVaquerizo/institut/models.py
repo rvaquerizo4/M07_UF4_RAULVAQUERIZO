@@ -7,11 +7,11 @@ class Alum(models.Model):
     curso = models.CharField(max_length=50)
     edad = models.IntegerField()
     poblacion = models.DateField()
-    graduado = models.BooleanField()
+    clase = models.CharField(max_length=50)
 class Prof(models.Model):
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     curso = models.CharField(max_length=50)
     edad = models.IntegerField()
     poblacion = models.DateField()
-    graduado = models.BooleanField()
+    clase = models.CharField(max_length=50)
