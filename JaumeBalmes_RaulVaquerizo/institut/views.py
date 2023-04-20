@@ -4,6 +4,8 @@ from django.http import HttpResponse
 from django.template import loader, Context
 from django.template.context import RequestContext
 
+from .models import Alum, Prof
+
 profesores = {
     "prof1": {
         "id": "1",
@@ -113,5 +115,33 @@ def form_prof(request):
     if form.is_valid():
         form.save()
         return redirect('profs')
+    context = {'form': form}
+    return render(request, 'form_prof.html', context)
+
+
+def update_alumn(request, pk):
+    alumn = Alum.objects.get(id = pk)
+    form = AlumForm(instance=alumn)
+
+    if request.method == 'POST':
+        form = AlumForm(request.POST, instance=alumn)
+        if form.is_valid():
+            form.save()
+            return redirect('alumns')
+
+    context = {'form': form}
+    return render(request, 'form_alum.html', context)
+
+
+def update_prof(request, pk):
+    prof = Prof.objects.get(id=pk)
+    form = ProfForm(instance=prof)
+
+    if request.method == 'POST':
+        form = ProfForm(request.POST, instance=prof)
+        if form.is_valid():
+            form.save()
+            return redirect('profs')
+
     context = {'form': form}
     return render(request, 'form_prof.html', context)

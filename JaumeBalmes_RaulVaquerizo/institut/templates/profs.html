@@ -23,5 +23,8 @@
       </label>
       {{ v.age }}
     </div>
+     <div>
+        <a href="{% url 'update_prof' v.id %}">EDIT</a>
+    </div>
   {% endfor %}
 {% endblock %}
