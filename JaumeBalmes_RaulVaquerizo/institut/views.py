@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import AlumForm, ProfForm
 from django.http import HttpResponse
 from django.template import loader, Context
@@ -99,12 +99,19 @@ def prof(request, pk):
 
 
 def form_alum(request):
-    form = AlumForm()
+    form = AlumForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect('alumns')
+
     context = {'form': form}
     return render(request, 'form_alum.html', context)
 
 
 def form_prof(request):
-    form = ProfForm()
+    form = ProfForm(request.POST)
+    if form.is_valid():
+        form.save()
+        return redirect('profs')
     context = {'form': form}
     return render(request, 'form_prof.html', context)
