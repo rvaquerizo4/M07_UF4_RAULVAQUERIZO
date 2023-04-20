@@ -1,27 +1,40 @@
 {% extends 'index.html' %}
 {% block content %}
 
-  <h1>Pagina alumnes</h1>
+  <h1>Pagina Alumne</h1>
   <h2>Dades Alumne:</h2>
-    <div>
+
+   <div>
         <label>
             Nom:
         </label>
-            {{ alumn.name }}
+             {{ alumn.nombre  }}
     </div>
     <div>
         <label>
             Cognom:
         </label>
-            {{ alumn.surname }}
+            {{ alumn.apellido }}
     </div>
     <div>
         <label>
-            Age:
+            Curs:
         </label>
-            {{ alumn.age }}
+            {{ alumn.curso }}
     </div>
+    <div>
+            <label>
+                Poblacion:
+            </label>
+                {{ alumn.poblacion }}
+        </div>
+    <div>
+            <label>
+                Clase:
+            </label>
+                {{ alumn.clase }}
+        </div>
+
     </br>
     <a href="{% url 'alumns' %}">Go back</a>
-
 {% endblock %}
