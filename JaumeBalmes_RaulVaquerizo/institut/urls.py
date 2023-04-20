@@ -13,5 +13,5 @@ urlpatterns = [
     path('alumn/update/<str:pk>/', views.update_alumn, name='update_alumn'),
     path('prof/update/<str:pk>/', views.update_prof, name='update_prof'),
     path('delete/prof/<str:pk>/', views.delete_prof, name='delete_prof'),
-path('delete/alumn/<str:pk>/', views.delete_alumn, name='delete_alumn')
+    path('delete/alumn/<str:pk>/', views.delete_alumn, name='delete_alumn')
 ]

@@ -97,11 +97,11 @@ def delete_alumn(request, pk):
 
 
 def delete_prof(request, pk):
-    alumn = Alum.objects.get(id=pk)
+    prof = Prof.objects.get(id=pk)
 
     if request.method == 'POST':
-        alumn.delete()
+        prof.delete()
         return redirect('profs')
 
-    context = {'object': alumn}
+    context = {'object': prof}
     return render(request, 'delete.html', context)
