@@ -4,24 +4,36 @@
   <h1>Pagina profesor</h1>
   <h2>Dades Profesor:</h2>
 
-    <div>
+   <div>
         <label>
             Nom:
         </label>
-            {{ prof.name }}
+             {{ prof.nombre  }}
     </div>
     <div>
         <label>
             Cognom:
         </label>
-            {{ prof.surname }}
+            {{ prof.apellido }}
     </div>
     <div>
         <label>
-            Age:
+            Curs:
         </label>
-            {{ prof.age }}
+            {{ prof.curso }}
     </div>
+    <div>
+            <label>
+                Poblacion:
+            </label>
+                {{ prof.poblacion }}
+        </div>
+    <div>
+            <label>
+                Clase:
+            </label>
+                {{ prof.clase }}
+        </div>
 
     </br>
     <a href="{% url 'profs' %}">Go back</a>

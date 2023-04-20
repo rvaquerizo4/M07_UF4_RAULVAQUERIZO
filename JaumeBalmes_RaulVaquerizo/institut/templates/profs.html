@@ -1,30 +1,40 @@
 {% extends 'index.html' %}
 
 {% block content %}
-  <h1>Pagina profesor</h1>
-  <h2>Dades Profesor:</h2>
-  {% for k, v in prof.items %}
-    <h3>{{ k }}</h3>
+  <h1>Profesores de la escuela</h1>
+  {% for profesor in prof %}
     <div>
       <label>
-        Nom:
+        Nombre:
       </label>
-      <a href="{% url 'prof' v.id %}">{{ v.name }}</a>
+      <a href="{% url 'prof' profesor.id %}">{{ profesor.nombre }}</a>
     </div>
     <div>
       <label>
-        Cognom:
+        Apellido:
       </label>
-      {{ v.surname }}
+      {{ profesor.apellido }}
     </div>
     <div>
       <label>
-        Age:
+        Asignatura:
       </label>
-      {{ v.age }}
+      {{ profesor.curso }}
     </div>
-     <div>
-        <a href="{% url 'update_prof' v.id %}">EDIT</a>
+    <div>
+      <label>
+        Población:
+      </label>
+      {{ profesor.poblacion }}
+    </div>
+    <div>
+      <label>
+        Clase:
+      </label>
+      {{ profesor.clase }}
+    </div>
+    <div>
+      <a href="{% url 'update_prof' profesor.id %}">Editar</a>
     </div>
   {% endfor %}
 {% endblock %}
