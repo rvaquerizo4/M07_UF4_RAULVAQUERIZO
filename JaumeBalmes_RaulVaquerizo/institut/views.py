@@ -82,3 +82,26 @@ def update_prof(request, pk):
 
     context = {'form': form}
     return render(request, 'form_prof.html', context)
+
+
+def delete_alumn(request, pk):
+    alumn = Alum.objects.get(id=pk)
+
+
+    if request.method == 'POST':
+        alumn.delete()
+        return redirect('alumns')
+
+    context = {'object': alumn}
+    return render(request, 'delete.html', context)
+
+
+def delete_prof(request, pk):
+    alumn = Alum.objects.get(id=pk)
+
+    if request.method == 'POST':
+        alumn.delete()
+        return redirect('profs')
+
+    context = {'object': alumn}
+    return render(request, 'delete.html', context)

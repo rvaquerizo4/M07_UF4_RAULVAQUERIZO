@@ -1,0 +1,11 @@
+{% extends 'index.html' %}
+
+{% block content %}
+  <h1>Formulari delete</h1>
+  <form action="" method="POST">
+    {% csrf_token %}
+    <p>Segur que vols eliminar a " {{ object.nombre }}" ?</p>
+    <button><a href="{% url 'alumns' %}">Tornar</a></button>
+    <input type="submit" value="CONFIRM">
+  </form>
+{% endblock %}
